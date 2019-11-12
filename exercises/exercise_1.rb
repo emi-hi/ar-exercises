@@ -16,7 +16,6 @@ puts "----------"
 
 burnaby = Store.create
 burnaby.name = "Burnaby"
-puts burnaby.name
 burnaby.annual_revenue = 300000
 burnaby.mens_apparel = true
 burnaby.womens_apparel = true
@@ -27,13 +26,14 @@ richmond.name = "Richmond"
 richmond.annual_revenue = 1260000
 richmond.mens_apparel = false
 richmond.womens_apparel = true
+richmond.save 
 
 gastown = Store.create
 gastown.name = "Gastown"
 gastown.annual_revenue = 190000
 gastown.mens_apparel = true
 gastown.womens_apparel = false
-
+gastown.save
 
 puts Store.count
 #CREATE TABLE "stores" ("id" bigserial primary key, "name" character varying, "annual_revenue" integer, "mens_apparel" boolean, "womens_apparel" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
