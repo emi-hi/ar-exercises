@@ -17,26 +17,10 @@ puts "Exercise 4"
 puts "----------"
 # Your code goes here ...
 
-whistler = Store.create
-whistler.name = "Whistler"
-whistler.annual_revenue = 1900000
-whistler.mens_apparel = true
-whistler.womens_apparel = false
-whistler.save
+Store.create(name: "Whistler", annual_revenue: 1900000, mens_apparel: true, womens_apparel: false)
+Store.create(name: "Surrey", annual_revenue: 224000, mens_apparel: false, womens_apparel: true)
+Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: true, womens_apparel: true)
 
-surrey = Store.create
-surrey.name = "Surrey"
-surrey.annual_revenue = 224000
-surrey.mens_apparel = false
-surrey.womens_apparel = true
-surrey.save 
-
-yaletown = Store.create
-yaletown.name = "Yaletown"
-yaletown.annual_revenue = 430000
-yaletown.mens_apparel = true
-yaletown.womens_apparel = true
-yaletown.save
 puts Store.count
 
 @womens_stores = Store.where("womens_apparel = ? AND annual_revenue < ?", true, 1000000) 
